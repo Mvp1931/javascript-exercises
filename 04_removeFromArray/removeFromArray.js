@@ -1,11 +1,10 @@
-const removeFromArray = function (arrayList, elementToRemove) {
-    let newArrayList = [...arrayList];
-    arrayList.forEach((element) => {
-        if (element === elementToRemove) {
-            newArrayList.splice(newArrayList.indexOf(element), 1);
-        }
+const removeFromArray = function (arrayList, ...elementsToRemove) {
+    let newArray = [...arrayList];
+    elementsToRemove.forEach((element) => {
+        newArray = newArray.filter((item) => item !== element);
     });
-    return newArrayList;
+
+    return newArray;
 };
 
 // Do not edit below this line
